@@ -16,7 +16,7 @@ export function randomKey(): string {
   }
 }
 
-export function deBounce<T extends (...args: any[]) => void>(
+export function deBounce<T extends (...args: Parameters<T>) => void>(
   func: T,
   timeout: number
 ) {

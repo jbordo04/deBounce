@@ -1,24 +1,34 @@
 name: Check DeBounce Method
 
-on:
-  push:
-    branches:
-      - master
+#Que lo inicia o enciende, a la rama madre
+on: push
 
+#Que trabajo va a hacer
 jobs:
-  lint:
-    runs-ons: ubuntu-latest
+  #Nombre del trabajo
+  deploy:
+    #Sistema Virtual a utilizar
+    runs-on: ubuntu-latest
     steps:
+      #Comprovamos que haya un repositorio
       - uses: actions/checkout@4
         with:
           fetch-depth: 0
+
+      # Permite configurar que version de Node queremos
       - uses: actions/setup-node@4
         with:
           cache: "npm"
           node-version: "18"
+
+      # Instalamos todas las dependencia de modo claro
       - name: Clear Instalation of  Dependencies
         run: npm ci
+
+      # Ejecutamos el Lint para comprovar que cumple con las reglas de estilos
       - name: Execute Lint
         run: npm run lint
+
+      # Ejecutamos que el test sea correcto
       - name: Test
         run: npm test

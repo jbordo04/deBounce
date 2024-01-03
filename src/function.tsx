@@ -16,11 +16,14 @@ export function randomKey(): string {
   }
 }
 
-export function deBounce(func: Function, timeout: number) {
+export function deBounce<T extends (...args: any[]) => void>(
+  func: T,
+  timeout: number
+) {
   // let timer: NodeJS.Timeout ;
   let timer: ReturnType<typeof setTimeout>;
 
-  return function (this: any, ...args: any[]) {
+  return function (this: ThisParameterType<T>, ...args: Parameters<T>) {
     clearTimeout(timer);
 
     timer = setTimeout(() => {

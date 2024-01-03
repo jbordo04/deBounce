@@ -1,10 +1,7 @@
 name: Check DeBounce Method
 
 #Que lo inicia o enciende, a la rama madre
-on:
-  push:
-    branches:
-      - master
+on: push
 
 #Que trabajo va a hacer
 jobs:

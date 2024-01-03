@@ -32,3 +32,16 @@ jobs:
         # Ejecutamos que el test sea correcto
       - name: Test
         run: npm test
+
+      #Si todo esta correcto, podemos hacer un push sobre el repo
+      - name: Commit changes
+
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add .
+          git commit -m "Apply ESLint changes"
+
+      - name: Push changes if ESLint passed
+        if: success() # Esta línea asegura que solo se ejecute si los pasos anteriores (lint) fueron exitosos
+        run: git push origin ${{ github.ref }}

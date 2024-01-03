@@ -37,8 +37,6 @@ jobs:
       - name: Commit changes
 
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
           git add .
           git commit -m "Apply ESLint changes"
 

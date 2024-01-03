@@ -31,3 +31,10 @@ export function deBounce<T extends (...args: Parameters<T>) => void>(
     }, timeout);
   };
 }
+
+// const result = deBounce(() => {
+//   const res = randomKey();
+//   console.log(res);
+// }, 1000);
+
+// result()

@@ -27,3 +27,5 @@ Ejemplo práctico de como funciona el método deBounce, antes que nada, que es?
 - `npm run dev`: Si no se abre automáticamente la pagina, hacer click donde salga [http://localhost], se abrirá la pagina web para poder entender las diferencias de implementarlo.
 
 - `npm test`: Hace unas pruebas predefinidas para obtener la validez de la función.
+
+- `node src/cli.js`: Ejecuta a nivel de terminal la función, donde ya tiene predefinidas 3 llamadas y devuelve su resultado impreso en una `console.log()`.

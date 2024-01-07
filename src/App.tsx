@@ -32,7 +32,7 @@ function App() {
         <button className="genButt" onClick={handlingdeBounce}>
           Generate Key w/ deBounce
         </button>
-        {genKey != "" && <button className="genKey">{deBouce}</button>}
+        {deBouce != "" && <button className="genKey">{deBouce}</button>}
       </div>
     </>
   );

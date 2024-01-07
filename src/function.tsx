@@ -35,6 +35,8 @@ export function deBounce<T extends (...args: Parameters<T>) => void>(
 // const result = deBounce(() => {
 //   const res = randomKey();
 //   console.log(res);
-// }, 1000);
+// }, 2000);
 
-// result()
+// result();
+// setTimeout(() => result(), 1000);
+// setTimeout(() => result(), 1500);
